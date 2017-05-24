@@ -1,0 +1,776 @@
+@charset "UTF-8";
+
+/* ====================================================================================================================
+   Beyond Indigo Pets design styles
+    ==================================================================================================================== */
+
+/* ==========================================================================
+	Animations
+	========================================================================== */
+
+/* prepare elements for jQuery animation */
+.body-text, .features li {
+	opacity: 0;
+}
+
+/* ==========================================================================
+	Network bar
+	========================================================================== */
+
+.network-bar {
+	line-height: 1rem;
+	color: $white;
+	background-color: $dark-gray;
+	transition: opacity .5s;
+	height: $network-bar-height;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	a {
+		text-decoration: none;
+	}
+}
+.network-recommendation {
+	font-weight: $semibold;
+	text-align: right;
+	padding-top: $unit * .4;
+	padding-bottom: $unit * .4;
+	a {
+		color: $light-gray;
+		&:hover {
+			color: $white;
+		}
+	}
+	p {
+		margin: 0;
+	}
+	.network-recommendation-aaha {
+		font-size: 90%;
+		color: $aaha-color;
+	}
+}
+.network-sites {
+	text-align: center;
+	float: right;
+	border-left: solid thin $medium-gray;
+	cursor: pointer;
+	&:hover {
+		background-color: $brand-color;
+	}
+	h2 {
+		font-size: $very-small-text;
+		line-height: 1rem;
+		font-weight: $normal;
+		color: $white;
+		margin: 0;
+		padding: $unit * .33 0;
+	}
+	.sub-menu {
+		font-size: .93rem;
+		font-weight: $normal;
+		top: $network-bar-height;
+		img {
+			height: $unit;
+			width: $unit;
+		}
+		.icon-photo {
+			border-radius: $border-radius;
+		}
+	}
+}
+.icon {
+	margin-right: $unit * .125;
+	* {
+		transition: all .5s ease;
+	}
+}
+.icon-fill-brand {
+	fill: $brand-color;
+}
+.icon-fill-white {
+	fill: $white;
+}
+.icon-fill-trans-white {
+	fill: $white;
+	opacity: .7;
+}
+.icon-fill-transparent {
+	fill: $white;
+	opacity: 0;
+}
+
+/* ==========================================================================
+	Header and nav
+	========================================================================== */
+
+.site-header {
+	background-color: $white;
+	width: 100%;
+	border-bottom: solid thin $very-light-gray;
+	transition: none;
+	transition: opacity .5s;
+	position: absolute;
+	top: $network-bar-height;
+	left: 0;
+	z-index: 2;
+	a {
+		text-decoration: none;
+	}
+	.header-logo {
+        border-right: solid thin $very-light-gray;
+		a {
+			display: block;
+		}
+		img {
+			height: $site-header-height;
+			width: 14.133333rem;
+		}
+	}
+	&.stuck {
+		position: fixed;
+		top: 0;
+	}
+}
+.site-nav {
+	color: $brand-color;
+	padding: 0;
+	> ul > li {
+		font-size: 1.125rem;
+		line-height: $site-header-height;
+		font-weight: $semibold;
+		text-align: center;
+		padding: 0;
+		border-top: solid thin $very-light-gray;
+		border-right: solid thin $very-light-gray;
+		&:hover {
+			color: $white;
+			background-color: $brand-color;
+		}
+		> a {
+			display: block;
+            white-space: nowrap;
+			&:hover {
+				color: $white;
+			}
+		}
+		.sub-menu {
+			top: $site-header-height;
+		}
+	}
+}
+.on {
+	color: $brand-color-accent;
+}
+.main-menu {
+	cursor: pointer;
+	z-index: +1;
+}
+.sub-menu {
+	font-size: $normal-text;
+	line-height: 1rem;
+	font-weight: $semibold;
+	text-align: left;
+	background-color: $trans-white;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	a {
+		display: block;
+		padding: $unit * .5;
+		&:hover {
+			color: $white;
+			background-color: $brand-color-highlight;
+		}
+	}
+	&:before {
+		content: " ";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-top: .5rem solid $brand-color;
+		border-left: .5rem solid transparent;
+		border-right: .5rem solid transparent;
+		position: absolute;
+		top: 0;
+		left: 48%;
+		z-index: +1;
+	}
+}
+.menu-parent {
+	&:hover {
+		.sub-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+		.icon rect {
+			fill: $white;
+			&:first-child {
+				transform: translateY(-2px);
+			}
+			&:last-child {
+				transform: translateY(+2px);
+			}
+		}
+	}
+}
+.social {
+	text-align: center;
+	height: $site-header-height;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    ul {
+        padding: ($unit * .25) 0;
+        visibility: hidden;
+        opacity: 0;
+        background-color: $trans-white;
+    }
+	li {
+		margin: ($unit * .25) 0;
+	}
+	a {
+		color: $brand-color;
+		display: inline-block;
+		text-align: center;
+		border-radius: 2rem;
+		&:hover {
+			color: $brand-color-highlight;
+		}
+		&.social-twitter {
+			background-color: $twitter-color;
+			&:hover {
+				background-color: lighten($twitter-color, 10%);
+			}
+		}
+		&.social-facebook {
+			background-color: $facebook-color;
+			&:hover {
+				background-color: lighten($facebook-color, 10%);
+			}
+		}
+        &.social-linkedin {
+			background-color: $linkedin-color;
+			&:hover {
+				background-color: lighten($linkedin-color, 10%);
+			}
+		}
+		&.social-google-plus {
+			background-color: $google-plus-color;
+			&:hover {
+				background-color: lighten($google-plus-color, 10%);
+			}
+		}
+		&.social-pinterest {
+			background-color: $pinterest-color;
+			&:hover {
+				background-color: lighten($pinterest-color, 15%);
+			}
+		}
+		&.social-instagram {
+			background-color: $instagram-color;
+			&:hover {
+				background-color: lighten($instagram-color, 15%);
+			}
+		}
+		&.social-youtube {
+			@include youtube-color;
+			&:hover {
+				opacity: .7; // Using opacity to lighten because background is a gradient, not flat color
+			}
+		}
+	}
+	img {
+		height: 2rem;
+		width: 2rem;
+		border-radius: 2rem;
+	}
+	.newsletter {
+		@extend .button;
+		font-size: .75rem;
+		line-height: 2rem;
+		padding: 0 ($unit * .25);
+		&:hover {
+			color: $brand-color-accent;
+		}
+	}
+    &:hover {
+        .social-button {
+            background-color: $brand-color;
+            .social-icon {
+                transform: rotate(90deg);
+                circle {
+                    fill: $white;
+                    display: none;
+                }
+                polyline {
+                    stroke: $white;
+                }
+            }
+        }
+        ul {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.social-button {
+    line-height: $site-header-height;
+    border-right: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+	Content
+	========================================================================== */
+
+.content {
+	padding-top: 14.5rem;
+}
+/* Responsive video embed */
+.embed-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	iframe, object, embed {
+		border: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+/* Hero Image */
+.hero {
+	color: $white;
+	text-align: center;
+    @include brand-gradient;
+	padding: $unit;
+	* {
+        margin-top: 0;
+		color: $white;
+	}
+    h1, h2 {
+         margin-bottom: $unit;
+    }
+    h2 {
+        font-size: $large-text;
+        line-height: $unit;
+    }
+	.hero-image {
+		height: auto;
+		width: 100%;
+		// Exact measurements are needed for IE SVG scaling
+		@media (min-width: 480px) {
+			height: 164px;
+			width: 432px;
+		}
+		@media (min-width: 600px) {
+			height: 209px;
+			width: 552px;
+		}
+		@media (min-width: 800px) {
+			height: 285px;
+			width: 752px;
+		}
+		@media (min-width: 1024px) {
+			height: 370px;
+			width: 976px;
+		}
+		@media (min-width: 1280px) {
+			height: 467px;
+			width: 1232px;
+		}
+		@media (min-width: 1400px) {
+			height: 513px;
+			width: 1352px;
+		}
+	}
+	.hero-logos {
+		z-index: +1;
+	}
+	.hero-aaha {
+		height: $unit * 2.5;
+		width: auto;
+	}
+}
+.google-partner-badge {
+	width: 100%;
+	max-width: $unit * 8;
+	height: auto;
+}
+/* Features */
+ul.features {
+	text-shadow: 0 0 1.5rem rgba(0,0,0,.6) !important;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	li {
+		background-color: darken($dark-gray, 20%);
+		display: flex;
+		list-style: none;
+		width: 100%;
+		padding: 0;
+		border-top: solid thin $white;
+		transition: opacity .5s;
+		&.promo {
+			@include parent-brand-gradient;
+			text-shadow: none;
+			&:hover {
+				@include parent-brand-gradient-light;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+		overflow: hidden;
+		display: block;
+		padding: $unit $unit $unit * 2 $unit;
+		&:hover {
+			.feature-image {
+				filter: none;
+				opacity: .7;
+			}
+			.feature-more {
+				right: $unit * .75;
+			}
+		}
+	}
+	span {
+		display: block;
+		span {
+			display: inline;
+		}
+	}
+}
+.feature-image {
+	opacity: .4;
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.feature-category {
+	font-weight: $bold;
+	color: $brand-color-accent;
+	margin-bottom: $unit;
+}
+.feature-title {
+	font-size: $large-text;
+	font-weight: $light;
+}
+.feature-details {
+	margin-top: 1em;
+}
+.feature-more {
+	font-weight: $semibold;
+	position: absolute;
+	right: $unit;
+	bottom: $unit;
+	&:after {
+		font-size: $very-small-text;
+		content: ("\25B6");
+		color: $brand-color-accent;
+		margin-left: .25rem;
+	}
+}
+/* Portfolio features */
+.portfolio-features {
+	text-align: center;
+	clear: both;
+	padding: $unit;
+	h2 {
+		margin: 0 0 ($unit * .5) 0;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			text-align: center;
+			list-style: none;
+            margin-bottom: $unit;
+		}
+	}
+	a, span {
+		display: block;
+	}
+	a {
+		text-decoration: none;
+		&:hover .portfolio-feature-image {
+			border-color: $brand-color-accent;
+			img {
+				filter: brightness(1.08);
+			}
+		}
+	}
+	.button {
+		display: inline-block;
+	}
+}
+.home {
+	.portfolio-features {
+		background-color: $very-very-light-gray;
+	}
+}
+.portfolio-feature-image {
+	height: 13rem;
+	width: 13rem;
+	margin: 0 auto ($unit * .5) auto;
+	border: solid .25rem $very-light-gray;
+	border-radius: 50%;
+	transition: none;
+	img {
+		height: 100%;
+		width: 100%;
+		border-radius: 50%;
+	}
+}
+.portfolio-title {
+		font-size: $large-text;
+		font-weight: $light;
+		color: $brand-color-accent;
+		display: block;
+		margin-bottom: $unit * .25;
+		transition: none;
+}
+
+/* ==========================================================================
+	*************************************************************************
+    Media queries
+    *************************************************************************
+	========================================================================== */
+
+/* ==========================================================================
+	Small screens only
+	========================================================================== */
+
+@media (max-width: ($small-screen - $break-increment)) {
+
+	/* Nav */
+    .site-header {
+        .sub-menu {
+            width: 200%;
+            &:before {
+                left: 22%;
+            }
+        }
+    }
+    /* Social */
+    .social {
+        top: $site-header-height;
+    }
+	.network-sites {
+		padding: 0;
+	}
+	.network-recommendation {
+		.network-recommendation-aaha {
+			font-size: $very-small-text;
+		}
+	}
+
+}
+
+/* ==========================================================================
+	Small-medium screens only
+	========================================================================== */
+
+@media (max-width: ($small-screen - $break-increment)) {
+
+    /* Hero Image */
+	.hero-image {
+		display: none;
+	}
+
+}
+
+/* ==========================================================================
+	Above small screens
+	========================================================================== */
+
+@media (min-width: $small-screen) {
+
+    /* Header */
+    .site-header {
+        .header-logo {
+           border-bottom: none;
+       }
+    }
+    /* Social */
+    .social {
+        .newsletter {
+            padding: 0 ($unit * .5);
+        }
+    }
+    /* Main Containers */
+	:target {
+		display: block;
+		margin-top: $site-header-height; /* Offset targeted anchors for sticky nav */
+	}
+	.front-block {
+		margin: $unit auto;
+	}
+	/* Hero Image */
+    .hero {
+		padding: $unit $unit 0 $unit;
+        * {
+            margin: 0;
+        }
+        .hero-logos {
+            display: block;
+            position: absolute;
+            bottom: $unit;
+            left: $unit * 2;
+        }
+    }
+    /* Features */
+    ul.features {
+        li {
+            border-right: solid thin $white;
+        }
+    }
+
+}
+
+/* ==========================================================================
+	Below large screens
+	========================================================================== */
+
+@media (max-width: ($large-screen - $break-increment)) {
+
+	/* Header and Nav */
+	.site-nav {
+		> ul > li:last-child {
+			border-right: none;
+		}
+	}
+	/* Social */
+    .social {
+        top: 0;
+    }
+
+}
+
+/* ==========================================================================
+	Between small and large screens
+	========================================================================== */
+
+@media (min-width: $small-screen) and (max-width: ($large-screen - $break-increment)) {
+
+    .content {
+		padding-top: $network-bar-height + ($site-header-height * 2);
+	}
+	/* Features */
+    ul.features {
+		li {
+			width: 50%;
+			&:nth-child(2n) {
+				border-right: none;
+			}
+		}
+    }
+	/* Portfolio features */
+	.portfolio-features {
+        ul {
+            li {
+				&:nth-child(3n) {
+					clear: left;
+				}
+            }
+        }
+    }
+
+}
+
+/* ==========================================================================
+	Large screens and above
+	========================================================================== */
+
+@media (min-width: $large-screen) {
+
+    /* Header and Nav */
+	.site-header {
+        .header-logo {
+			text-align: center;
+		}
+	}
+	.site-nav {
+		> ul > li {
+			border-top: none;
+		}
+	}
+	/* Social */
+    .social {
+        position: relative;
+        right: auto;
+        ul {
+            padding: (($site-header-height - 2rem) * .45) 0;
+            visibility: visible;
+            opacity: 1;
+            background-color: transparent;
+        }
+        li {
+            display: inline-block;
+            margin: 0 ($unit * .1);
+        }
+    }
+    .social-button {
+        display: none;
+    }
+	/* Content */
+	.content {
+        padding-top: $network-bar-height + $site-header-height;
+    }
+    /* Features */
+    ul.features {
+        li:last-child {
+            border-right: none;
+        }
+    }
+    /* Portfolio features */
+    .portfolio-features {
+        ul {
+            li {
+				&:nth-child(3n) {
+					clear: none;
+				}
+				&:nth-child(5n) {
+					clear: left;
+				}
+            }
+        }
+    }
+	.home {
+		.portfolio-features {
+			ul {
+				li {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+    /* Features */
+    ul.features {
+        li {
+			width: 33.33333%;
+			&:nth-child(3n) {
+				border-right: none;
+			}
+		}
+    }
+
+}
