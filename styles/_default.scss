@@ -267,21 +267,17 @@ $break-increment: .0625;
 		width: 100%;
 	}
 }
-
-.g-padding-none { /* added the ability to use grid units with no padding and to add padding at will - TABBY 12.20.2016 */
-    padding: 0 !important;
-}
 .padded-top {
-    padding-top: 1.6rem !important;
+	padding-top: 1.6rem !important;
 }
 .padded-bottom {
-    padding-bottom: 1.6rem !important;
+	padding-bottom: 1.6rem !important;
 }
 .padded-left {
-    padding-left: 1.6rem !important;
+	padding-left: 1.6rem !important;
 }
 .padded-right {
-    padding-top: 1.6rem !important;
+	padding-top: 1.6rem !important;
 }
 
 /* ==========================================================================
@@ -648,7 +644,7 @@ img, svg, input, select, textarea, button, .button {
 	vertical-align: middle;
 }
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 hr {
 	color: $very-light-gray;
@@ -797,7 +793,7 @@ figcaption {
 	}
 }
 .container {
-    width: 100%;
+	width: 100%;
 	max-width: $content-max-width;
 	clear: both;
 	margin: 0 auto;
@@ -817,7 +813,7 @@ figcaption {
 /* Body text images */
 .body-text-image {
 	text-align: center;
-    width: 100%;
+	width: 100%;
 	max-width: 26rem;
 	img, svg {
 		height: auto;
@@ -886,7 +882,7 @@ figcaption {
 
 @media (min-width: $large-screen) {
 
-    /* Main Containers */
+	/* Main Containers */
 	.image-left, .image-right {
 		margin: 0;
 	}
@@ -898,11 +894,11 @@ figcaption {
 		float: right;
 		padding: 0 0 $unit $unit;
 	}
-    .text-block-with-image {
+	.text-block-with-image {
 		max-width: 34rem;
-        float: left;
-        margin: 0;
+		float: left;
+		margin: 0;
 		padding: 0;
-    }
+	}
 
 }
