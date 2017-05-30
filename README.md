@@ -11,6 +11,10 @@ Home page designed and developed for Beyond Indigo Pets in 2014 by [Mark Clifton
 * [Sass](http://sass-lang.com/)
 * [jQuery](https://jquery.com/)
 * [Modernizr](https://modernizr.com/)
+* [CodeKit](https://codekitapp.com/)
+* [Brackets](http://brackets.io/)
+* [Adobe Photoshop](http://www.adobe.com/products/photoshop.html)
+* [Adobe Illustrator](http://www.adobe.com/products/illustrator.html)
 
 [Full project information](http://mark-clifton.com/portfolio/beyond-indigo/)
 
